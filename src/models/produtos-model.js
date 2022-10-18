@@ -6,7 +6,7 @@ exports.schemaGet = {
   query: Joi.object({
     _id: Joi.any(),
     nome: Joi.any(),
-    preco: Joi.number().positive().integer(),
+    preco: Joi.number().positive(),
     descricao: Joi.any(),
     quantidade: Joi.number().min(0).integer(),
     imagem: Joi.any()
@@ -22,7 +22,7 @@ exports.schemaGetOne = {
 exports.schemaPost = {
   body: Joi.object({
     nome: Joi.string().required(),
-    preco: Joi.number().positive().integer().required(),
+    preco: Joi.number().positive().required(),
     descricao: Joi.string().required(),
     quantidade: Joi.number().min(0).integer().required(),
     imagem: Joi.string().optional()

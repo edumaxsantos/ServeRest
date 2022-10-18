@@ -5,7 +5,7 @@ const get = Joi.object().keys({
   produtos: Joi.array().items(
     Joi.object({
       nome: Joi.string().required(),
-      preco: Joi.number().positive().integer().required(),
+      preco: Joi.number().positive().required(),
       descricao: Joi.string().required(),
       quantidade: Joi.number().min(0).integer().required(),
       imagem: Joi.string().allow(null, '').optional(),
